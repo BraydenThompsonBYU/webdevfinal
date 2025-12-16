@@ -1,0 +1,49 @@
+/* styles.css — your custom styles (used by scratch.html and others) */
+
+/* 1) font family + color */
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #222222;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2) page header blocks (divs used for layout) */
+.block {
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  background: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* 3) custom accent color */
+.accent {
+  color: #0b5ed7; /* Bootstrap primary-ish */
+}
+
+/* 4) small utility style */
+.center {
+  text-align: center;
+}
+
+/* 5) special styles for scratch page elements */
+.scratch-bg {
+  background-image: linear-gradient(180deg, #f7fbff 0%, #e9f1ff 100%);
+  padding: 2rem;
+}
+
+/* 6) style for embedded iframe/tableau container */
+.embed-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.embed-wrapper iframe {
+  position: absolute;
+  top:0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

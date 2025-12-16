@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Scratch Page — Your Name</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Local small customizations allowed */
+    h1 { margin-top: 0; }
+    .you-tube { max-width: 800px; margin: 0 auto; }
+    .thumbnail { max-width: 100%; height: auto; border-radius: 6px; }
+  </style>
+</head>
+<body class="scratch-bg">
+  <div class="block" id="top">
+    <h1 class="center accent">Scratch Page — A little creative corner</h1>
+    <p class="center">This is my from-scratch page for the assignment. <a href="index.html">Back to professional pages</a>.</p>
+  </div>
+
+  <!-- DIV #1: About / content block -->
+  <div class="block" id="about">
+    <h2>About this page</h2>
+    <p>I built this page from scratch (blank HTML). It contains the required items listed in the assignment.</p>
+  </div>
+
+  <!-- DIV #2: Ordered list with unordered inside (requirement) -->
+  <div class="block">
+    <h3>My favorite hobbies (ordered list containing an unordered list)</h3>
+
+    <ol>
+      <li>Programming
+        <ul>
+          <li>Web development (HTML/CSS/JS)</li>
+          <li>Data visualization (Tableau, charts)</li>
+          <li>Small games & apps</li>
+        </ul>
+      </li>
+      <li>Music</li>
+      <li>Hiking</li>
+    </ol>
+  </div>
+
+  <!-- DIV #3: Image not from bootstrap theme -->
+  <div class="block">
+    <h3>Image (not from Bootstrap theme)</h3>
+    <p>Below is an image I added. Replace with your own image in assets/images/ for best effect.</p>
+    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1200&auto=format&fit=crop&crop=faces" alt="stock" class="thumbnail">
+  </div>
+
+  <!-- On-page anchor (requirement) -->
+  <div class="block">
+    <h3>Media</h3>
+    <p>Jump to the YouTube video here: <a href="#video-anchor">Go to video</a></p>
+
+    <h4 id="video-anchor">Embedded YouTube video</h4>
+    <div class="you-tube">
+      <!-- embedded YouTube: replace the src with the video you want -->
+      <div class="embed-wrapper">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Embedded Tableau (requirement: interactive, live) -->
+  <div class="block">
+    <h3>Interactive Tableau visualization</h3>
+    <p>Important: You must embed a *live* Tableau Public viz. Below is a template — **replace** the iframe `src` value with a Tableau Public embed link (instructions just after this code block).</p>
+
+    <div class="embed-wrapper">
+      <!-- TEMPLATE: replace src with your Tableau Public embed link -->
+      <iframe src="https://public.tableau.com/views/YourWorkbookName/YourViewName?:showVizHome=no&:embed=true" allowfullscreen></iframe>
+    </div>
+
+    <p class="small">How to get a working embed: find a viz on <em>Tableau Public</em>, click Share → copy the embed iframe code → paste the `src` URL into the iframe above. If you create your own viz, publish to Tableau Public and use its embed URL.</p>
+  </div>
+
+  <!-- Link to web app (small AI-collab app requirement) -->
+  <div class="block">
+    <h3>Small web app</h3>
+    <p>I built a small number guessing game. <a href="game.html">Play the game</a> (single-page app). The app file contains HTML, CSS and JS in one file.</p>
+  </div>
+
+  <footer class="block center">
+    <p><a href="index.html">Return to professional pages</a> • <a href="#top">Back to top</a></p>
+  </footer>
+</body>
+</html>

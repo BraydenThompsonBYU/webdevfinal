@@ -1,70 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
   <title>Number Guessing Game</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; padding: 2rem; background:#f4f7fb; color:#111; }
-    .card { background:#fff; padding:1.25rem; border-radius:8px; box-shadow:0 1px 6px rgba(0,0,0,0.06); max-width:480px; margin: 0 auto;}
-    input[type="number"] { width: 120px; padding:6px; margin-right:8px; }
-    button { padding:6px 10px; border-radius:6px; border: none; background:#0b5ed7; color:#fff; cursor:pointer; }
-    .log { margin-top:1rem; min-height:2.5rem; }
+    body { font-family: Arial; background:#eef2f7; padding:2rem; }
+    .box { background:white; padding:2rem; max-width:400px; margin:auto; border-radius:8px; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h2>Number Guessing Game</h2>
-    <p>I'm thinking of a number between 1 and 100. Try to guess it!</p>
 
-    <div>
-      <input id="guess" type="number" min="1" max="100" placeholder="Your guess">
-      <button id="tryBtn">Guess</button>
-      <button id="newBtn" style="background:#6c757d;margin-left:6px">New Game</button>
-    </div>
+<div class="box">
+  <h2>Guess the Number</h2>
+  <p>Pick a number between 1 and 50</p>
+  <input id="guess" type="number">
+  <button onclick="check()">Guess</button>
+  <p id="result"></p>
+  <a href="scratch.html">Back to Scratch Page</a>
+</div>
 
-    <div class="log" id="log"></div>
-    <p><small>Attempts: <span id="attempts">0</span></small></p>
-    <p><a href="scratch.html">Back to Scratch Page</a></p>
-  </div>
+<script>
+  let secret = Math.floor(Math.random()*50)+1;
+  function check(){
+    let g = Number(document.getElementById("guess").value);
+    document.getElementById("result").innerText =
+      g === secret ? "Correct!" : g < secret ? "Too low" : "Too high";
+  }
+</script>
 
-  <script>
-    (function(){
-      let secret, attempts;
-      const logEl = document.getElementById('log');
-      const attemptsEl = document.getElementById('attempts');
-      const guessInput = document.getElementById('guess');
-      const tryBtn = document.getElementById('tryBtn');
-      const newBtn = document.getElementById('newBtn');
-
-      function newGame() {
-        secret = Math.floor(Math.random() * 100) + 1;
-        attempts = 0;
-        logEl.textContent = 'New game started — make a guess!';
-        attemptsEl.textContent = attempts;
-        guessInput.value = '';
-      }
-
-      tryBtn.addEventListener('click', function(){
-        const val = Number(guessInput.value);
-        if (!val || val < 1 || val > 100) {
-          logEl.textContent = 'Please enter a number between 1 and 100.';
-          return;
-        }
-        attempts++;
-        attemptsEl.textContent = attempts;
-        if (val === secret) {
-          logEl.textContent = 'Correct! You guessed it in ' + attempts + ' attempts. 🎉';
-        } else if (val < secret) {
-          logEl.textContent = 'Too low — try a higher number.';
-        } else {
-          logEl.textContent = 'Too high — try a lower number.';
-        }
-      });
-
-      newBtn.addEventListener('click', newGame);
-      newGame();
-    })();
-  </script>
 </body>
 </html>
